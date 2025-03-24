@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from api.instagram_api import app as public_app
+from api.instagram_api import app as insta_app  # Ensure correct path
 
 app = FastAPI()
 
-# Mount public API
-app.mount("/public", public_app)
+# Mount Instagram API
+app.mount("/public", insta_app)
 
 @app.get("/")
 def home():
